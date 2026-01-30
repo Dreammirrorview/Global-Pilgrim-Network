@@ -1,0 +1,44 @@
+.
+|-- PROJECT_SUMMARY.md
+|-- QUICK_START.md
+|-- README.md
+|-- docs
+|-- global_bank
+|   |-- assets
+|   |-- css
+|   |   |-- dashboard.css
+|   |   `-- login.css
+|   |-- dashboard.html
+|   |-- images
+|   |-- js
+|   |   |-- dashboard.js
+|   |   `-- login.js
+|   `-- login.html
+|-- index.html
+|-- outputs
+|   |-- workspace_output_1769710245_9494.txt
+|   |-- workspace_output_1769710310_1019.txt
+|   |-- workspace_output_1769710331_701.txt
+|   |-- workspace_output_1769713809_561.txt
+|   |-- workspace_output_1769714315_8096.txt
+|   |-- workspace_output_1769714401_4512.txt
+|   `-- workspace_output_1769714446_3404.txt
+|-- pilgrim_coin
+|   |-- assets
+|   |-- css
+|   |   |-- dashboard.css
+|   |   `-- login.css
+|   |-- dashboard.html
+|   |-- images
+|   |-- js
+|   |   |-- dashboard.js
+|   |   `-- login.js
+|   `-- login.html
+|-- shared
+|   |-- css
+|   |   `-- styles.css
+|   `-- js
+|       `-- utils.js
+`-- todo.md
+
+16 directories, 26 files

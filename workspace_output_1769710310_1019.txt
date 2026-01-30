@@ -1,0 +1,7 @@
+./todo.md
+./outputs/workspace_output_1769710245_9494.txt
+./outputs/workspace_output_1769710310_1019.txt
+./.agent_hooks/shutdown/00_track_processes_on_ports.py
+./.agent_hooks/shutdown/_readme.txt
+./.agent_hooks/run_all_hooks.py
+./.agent_hooks/startup/_readme.txt

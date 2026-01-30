@@ -1,0 +1,17 @@
+./README.md
+./global_bank/css/dashboard.css
+./global_bank/css/login.css
+./global_bank/dashboard.html
+./global_bank/js/dashboard.js
+./global_bank/js/login.js
+./global_bank/login.html
+./index.html
+./pilgrim_coin/css/dashboard.css
+./pilgrim_coin/css/login.css
+./pilgrim_coin/dashboard.html
+./pilgrim_coin/js/dashboard.js
+./pilgrim_coin/js/login.js
+./pilgrim_coin/login.html
+./shared/css/styles.css
+./shared/js/utils.js
+./todo.md
