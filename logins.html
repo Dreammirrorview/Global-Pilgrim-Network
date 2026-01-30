@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilgrim Coin Mining - Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="logins.css">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="warning-banner">
+            ⚠️ This is a real system for learning purposes only. No real money is handled.
+        </div>
+        
+        <div class="login-card">
+            <div class="logo-section">
+                <div class="logo-icon">🪙</div>
+                <h1>Pilgrim Coin</h1>
+                <p class="subtitle">Decentralized Mining System</p>
+            </div>
+            
+            <div class="network-monitor" id="networkMonitor">
+                <div class="monitor-header">🖥️ NETWORK MONITOR</div>
+                <div class="monitor-content">
+                    <div class="status-line">
+                        <span>Status:</span>
+                        <span class="online">ONLINE</span>
+                    </div>
+                    <div class="status-line">
+                        <span>Active Connections:</span>
+                        <span id="connectionCount">1</span>
+                    </div>
+                    <div class="status-line">
+                        <span>Security Level:</span>
+                        <span class="warning">HIGH</span>
+                    </div>
+                </div>
+            </div>
+            
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        placeholder="+2349030277275"
+                        required
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="bvn">BVN (Bank Verification Number)</label>
+                    <input 
+                        type="text" 
+                        id="bvn" 
+                        name="bvn" 
+                        placeholder="Enter your 11-digit BVN"
+                        maxlength="11"
+                        required
+                    >
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">
+                    🔐 Secure Login
+                </button>
+            </form>
+            
+            <div class="login-footer">
+                <p class="security-note">
+                    🔒 Only authorized personnel can access this system
+                </p>
+                <p class="owner-info">
+                    Owner: Olawale Abdul-Ganiyu
+                </p>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <div class="info-card">
+                <h3>💎 Pilgrim Coin</h3>
+                <p>Value: $0.50 per PLC</p>
+                <p>Blockchain: Ethereum/BSC Compatible</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>⛏️ Mining Features</h3>
+                <p>• Automatic wallet generation</p>
+                <p>• Real-time balance updates</p>
+                <p>• Multi-blockchain support</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>🔐 Security</h3>
+                <p>• Owner-only access</p>
+                <p>• Network monitoring</p>
+                <p>• BVN authentication</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Alarm Modal -->
+    <div class="modal" id="alarmModal">
+        <div class="modal-content alarm-modal">
+            <h2 class="alarm-title">🚨 SECURITY ALERT 🚨</h2>
+            <div id="alarmContent"></div>
+            <button class="btn btn-danger btn-block" onclick="closeAlarmModal()">
+                Acknowledge
+            </button>
+        </div>
+    </div>
+    
+    <script src="utils.js"></script>
+    <script src="logins.js"></script>
+</body>
+</html>

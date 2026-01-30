@@ -1,0 +1,462 @@
+/* Pilgrim Coin Dashboards Styles */
+
+body {
+    background: #f0f2f5;
+}
+
+.dashboard-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.dashboard-header {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.user-info {
+    color: #666;
+    font-size: 14px;
+}
+
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+/* Network Monitor Section */
+.network-monitor-section {
+    background: #1a1a2e;
+    color: #00ff00;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-family: 'Courier New', monospace;
+    border: 2px solid #00ff00;
+}
+
+.network-monitor-section h3 {
+    margin: 0 0 12px 0;
+    color: #00ff00;
+    font-size: 16px;
+}
+
+.network-status {
+    font-size: 12px;
+}
+
+.connection-item {
+    padding: 8px;
+    margin: 4px 0;
+    background: rgba(0,255,0,0.1);
+    border-radius: 4px;
+}
+
+/* Mining Section */
+.mining-section {
+    padding: 20px 0;
+}
+
+.mining-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.info-box {
+    background: #f8f9fa;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.info-box h4 {
+    color: #666;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.rate-value {
+    font-size: 20px;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.mining-controls {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.btn-lg {
+    padding: 16px 32px;
+    font-size: 18px;
+}
+
+.mining-status {
+    background: #f8f9fa;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.mining-status.active {
+    background: #d4edda;
+    color: #155724;
+    border-left: 4px solid #28a745;
+}
+
+.mining-log {
+    background: #1a1a2e;
+    color: #00ff00;
+    padding: 16px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.mining-log h4 {
+    color: #00ff00;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+#logContent {
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.log-entry {
+    margin: 4px 0;
+    padding: 4px;
+    background: rgba(0,255,0,0.1);
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 12px 24px;
+    border: none;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.tab-btn:hover {
+    background: #f0f0f0;
+}
+
+.tab-btn.active {
+    background: #667eea;
+    color: white;
+}
+
+.tab-content {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Wallet List */
+.wallet-item {
+    background: #f8f9fa;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border-left: 4px solid #667eea;
+}
+
+.wallet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.wallet-type {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #667eea;
+    color: white;
+}
+
+.wallet-address {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #333;
+    margin: 8px 0;
+    word-break: break-all;
+}
+
+.wallet-balance {
+    font-size: 20px;
+    font-weight: bold;
+    color: #28a745;
+}
+
+/* Customer List */
+.customer-item {
+    background: #f8f9fa;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border-left: 4px solid #28a745;
+}
+
+.customer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.customer-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.customer-balance {
+    font-size: 20px;
+    font-weight: bold;
+    color: #28a745;
+}
+
+.customer-details {
+    font-size: 14px;
+    color: #666;
+    margin: 8px 0;
+}
+
+.customer-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+/* Transaction List */
+.transaction-item {
+    background: #f8f9fa;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.transaction-item.credit {
+    border-left: 4px solid #28a745;
+}
+
+.transaction-item.debit {
+    border-left: 4px solid #dc3545;
+}
+
+.transaction-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.transaction-type {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.transaction-type.credit {
+    background: #d4edda;
+    color: #155724;
+}
+
+.transaction-type.debit {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.transaction-amount {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.transaction-amount.credit {
+    color: #28a745;
+}
+
+.transaction-amount.debit {
+    color: #dc3545;
+}
+
+.transaction-details {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Transfer Section */
+.transfer-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.transfer-tab-btn {
+    padding: 12px 24px;
+    border: none;
+    background: #f8f9fa;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.transfer-tab-btn.active {
+    background: #667eea;
+    color: white;
+}
+
+.transfer-content {
+    animation: fadeIn 0.3s ease;
+}
+
+/* Modal Styles */
+.modal-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    justify-content: flex-end;
+}
+
+/* No Data */
+.no-data {
+    text-align: center;
+    color: #999;
+    padding: 40px;
+    font-size: 16px;
+}
+
+/* Online Status */
+.online {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #28a745;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+/* Owner Profile */
+.owner-profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.owner-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid white;
+}
+
+.owner-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.owner-details h3 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+}
+
+.owner-details p {
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+.owner-details .online {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    background: #00ff00;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .mining-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .tabs {
+        flex-direction: column;
+    }
+    
+    .owner-profile {
+        flex-direction: column;
+        text-align: center;
+    }
+}

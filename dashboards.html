@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilgrim Coin - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboards.css">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-left">
+                <div class="logo">🪙 Pilgrim Coin</div>
+                <span class="security-badge">SECURE</span>
+            </div>
+            <div class="header-right">
+                <span id="currentUser" class="user-info"></span>
+                <button class="btn btn-danger btn-sm" onclick="logout()">
+                    🚪 Logout
+                </button>
+            </div>
+        </header>
+        
+        <!-- Network Monitor -->
+        <div class="network-monitor-section">
+            <h3>🖥️ Network Monitor</h3>
+            <div id="networkStatus" class="network-status"></div>
+        </div>
+        
+        <!-- Warning Banner -->
+        <div class="warning-banner">
+             This is a real system. real money is handled. All features are for le
+        </div>
+        
+        <!-- Stats Cards -->
+        <div class="dashboard-grid">
+            <div class="stat-card">
+                <h3>💰 Total Balance</h3>
+                <div class="value" id="totalBalance">$0.00</div>
+                <div class="sub-value" id="pilgrimBalance">0 PLC</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>👥 Total Customers</h3>
+                <div class="value" id="totalCustomers">0</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>📊 Today's Mining</h3>
+                <div class="value" id="todayMining">$0.00</div>
+                <div class="sub-value" id="todayPilgrim">0 PLC</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>💳 Total Wallets</h3>
+                <div class="value" id="totalWallets">0</div>
+            </div>
+        </div>
+        
+        <!-- Owner Profile -->
+        <div class="owner-profile">
+            <div class="owner-avatar">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23667eea'/%3E%3Ctext x='50' y='60' font-size='40' text-anchor='middle' fill='white'%3EOA%3C/text%3E%3C/svg%3E" alt="Owner Avatar">
+            </div>
+            <div class="owner-details">
+                <h3>Olawale Abdul-Ganiyu</h3>
+                <p><strong>Phone:</strong> +2349030277275</p>
+                <p><strong>Role:</strong> System Administrator</p>
+                <p><strong>Status:</strong> <span class="online">● Online</span></p>
+            </div>
+        </div>
+        
+        <!-- Main Content Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('mining')">
+                ⛏️ Mining
+            </button>
+            <button class="tab-btn" onclick="showTab('wallets')">
+                💼 Wallets
+            </button>
+            <button class="tab-btn" onclick="showTab('customers')">
+                👥 Customers
+            </button>
+            <button class="tab-btn" onclick="showTab('transactions')">
+                📋 Transactions
+            </button>
+            <button class="tab-btn" onclick="showTab('transfer')">
+                💸 Transfer
+            </button>
+        </div>
+        
+        <!-- Tab Contents -->
+        <div class="tab-content" id="mining">
+            <div class="card">
+                <div class="card-header">
+                    <h2>⛏️ Pilgrim Coin Mining</h2>
+                </div>
+                <div class="mining-section">
+                    <div class="mining-info">
+                        <div class="info-box">
+                            <h4>Current Rate</h4>
+                            <p class="rate-value">$0.50 per PLC</p>
+                        </div>
+                        <div class="info-box">
+                            <h4>Mined Today</h4>
+                            <p class="rate-value" id="minedToday">0 PLC</p>
+                        </div>
+                        <div class="info-box">
+                            <h4>Network Hashrate</h4>
+                            <p class="rate-value">1.25 TH/s</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mining-controls">
+                        <button class="btn btn-success btn-lg" id="startMiningBtn" onclick="startMining()">
+                            ▶️ Start Mining
+                        </button>
+                        <button class="btn btn-danger btn-lg" id="stopMiningBtn" onclick="stopMining()" style="display: none;">
+                            ⏹️ Stop Mining
+                        </button>
+                    </div>
+                    
+                    <div class="mining-status" id="miningStatus">
+                        <p>Mining is currently stopped</p>
+                    </div>
+                    
+                    <div class="mining-log" id="miningLog">
+                        <h4>Mining Log</h4>
+                        <div id="logContent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="wallets" style="display: none;">
+            <div class="card">
+                <div class="card-header">
+                    <h2>💼 Crypto Wallets</h2>
+                    <button class="btn btn-primary" onclick="showGenerateWalletModal()">
+                        ➕ Generate New Wallet
+                    </button>
+                </div>
+                
+                <div class="form-group">
+                    <label>Filter by Blockchain:</label>
+                    <select id="blockchainFilter" onchange="filterWallets()">
+                        <option value="all">All Blockchains</option>
+                        <option value="ethereum">Ethereum (ERC-20)</option>
+                        <option value="bsc">Binance Smart Chain (BEP-20)</option>
+                        <option value="tron">TRON (TRC-20)</option>
+                        <option value="bitcoin">Bitcoin</option>
+                    </select>
+                </div>
+                
+                <div id="walletsList">
+                    <p class="no-data">No wallets generated yet</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="customers" style="display: none;">
+            <div class="card">
+                <div class="card-header">
+                    <h2>👥 Customer Accounts</h2>
+                    <button class="btn btn-primary" onclick="showCreateCustomerModal()">
+                        ➕ Create Account
+                    </button>
+                </div>
+                
+                <div id="customersList">
+                    <p class="no-data">No customers registered yet</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="transactions" style="display: none;">
+            <div class="card">
+                <div class="card-header">
+                    <h2>📋 Transaction History</h2>
+                </div>
+                
+                <div id="transactionsList">
+                    <p class="no-data">No transactions yet</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="transfer" style="display: none;">
+            <div class="card">
+                <div class="card-header">
+                    <h2>💸 Transfer / Withdraw</h2>
+                </div>
+                
+                <div class="transfer-section">
+                    <div class="transfer-tabs">
+                        <button class="transfer-tab-btn active" onclick="showTransferTab('internal')">
+                            Internal Transfer
+                        </button>
+                        <button class="transfer-tab-btn" onclick="showTransferTab('external')">
+                            External Withdraw
+                        </button>
+                    </div>
+                    
+                    <div class="transfer-content" id="internalTransfer">
+                        <form id="internalTransferForm">
+                            <div class="form-group">
+                                <label>From Account</label>
+                                <select id="fromAccount" required></select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>To Account</label>
+                                <select id="toAccount" required></select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Amount (PLC)</label>
+                                <input type="number" id="transferAmount" min="0" step="0.01" required>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-success">
+                                Transfer
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="transfer-content" id="externalTransfer" style="display: none;">
+                        <form id="externalTransferForm">
+                            <div class="form-group">
+                                <label>From Wallet</label>
+                                <select id="fromWallet" required></select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Destination Wallet Address</label>
+                                <input type="text" id="destinationAddress" placeholder="0x..." required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Amount (PLC)</label>
+                                <input type="number" id="withdrawAmount" min="0" step="0.01" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Target Blockchain</label>
+                                <select id="targetBlockchain" required>
+                                    <option value="ethereum">Ethereum</option>
+                                    <option value="bsc">Binance Smart Chain</option>
+                                    <option value="tron">TRON</option>
+                                    <option value="bitcoin">Bitcoin</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-success">
+                                Withdraw
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Generate Wallet Modal -->
+    <div class="modal" id="generateWalletModal">
+        <div class="modal-content">
+            <h2>Generate New Wallet</h2>
+            <form id="generateWalletForm">
+                <div class="form-group">
+                    <label>Blockchain Type</label>
+                    <select id="blockchainType" required>
+                        <option value="ethereum">Ethereum (ERC-20)</option>
+                        <option value="bsc">Binance Smart Chain (BEP-20)</option>
+                        <option value="tron">TRON (TRC-20)</option>
+                        <option value="bitcoin">Bitcoin</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Assign to Customer (Optional)</label>
+                    <select id="walletCustomer">
+                        <option value="">No customer assigned</option>
+                    </select>
+                </div>
+                
+                <div class="modal-buttons">
+                    <button type="submit" class="btn btn-success">Generate</button>
+                    <button type="button" class="btn btn-danger" onclick="closeModal('generateWalletModal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Create Customer Modal -->
+    <div class="modal" id="createCustomerModal">
+        <div class="modal-content">
+            <h2>Create Customer Account</h2>
+            <form id="createCustomerForm">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="customerName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="customerPhone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="customerEmail" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Initial Balance (PLC)</label>
+                    <input type="number" id="initialBalance" min="0" step="0.01" value="0">
+                </div>
+                
+                <div class="modal-buttons">
+                    <button type="submit" class="btn btn-success">Create Account</button>
+                    <button type="button" class="btn btn-danger" onclick="closeModal('createCustomerModal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Edit Customer Modal -->
+    <div class="modal" id="editCustomerModal">
+        <div class="modal-content">
+            <h2>Edit Customer Account</h2>
+            <form id="editCustomerForm">
+                <input type="hidden" id="editCustomerId">
+                
+                <div class="form-group">
+                    <label>Account Number</label>
+                    <input type="text" id="editAccountNumber" readonly>
+                </div>
+                
+                <div class="form-group">
+                    <label>Serial Number</label>
+                    <input type="text" id="editSerialNumber" readonly>
+                </div>
+                
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="editCustomerName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Balance (PLC)</label>
+                    <input type="number" id="editCustomerBalance" min="0" step="0.01" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Action</label>
+                    <select id="balanceAction">
+                        <option value="set">Set Balance</option>
+                        <option value="credit">Credit (+)</option>
+                        <option value="debit">Debit (-)</option>
+                    </select>
+                </div>
+                
+                <div class="modal-buttons">
+                    <button type="submit" class="btn btn-success">Update Account</button>
+                    <button type="button" class="btn btn-danger" onclick="closeModal('editCustomerModal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="utils.js"></script>
+    <script src="dashboards.js"></script>
+</body>
+</html>
