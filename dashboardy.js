@@ -1,6 +1,6 @@
 // Global Bank Nigeria Dashboardy JavaScript
 
-// Initialize dashboard
+// Initialize dashboardy
 document.addEventListener('DOMContentLoaded', function() {
     checkAuthentication();
     initializeDashboard();
