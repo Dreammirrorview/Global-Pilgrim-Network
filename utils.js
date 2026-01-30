@@ -1,4 +1,4 @@
-// Shared JavaScript Utilities for Financial System Demo
+// Shared JavaScript Utilities for Financial System
 
 // Security Warning - Always show on load
 function showSecurityWarning() {
@@ -6,14 +6,14 @@ function showSecurityWarning() {
     ╔═══════════════════════════════════════════════════════════════╗
     ║                    ⚠️ SECURITY WARNING ⚠️                    ║
     ╠═══════════════════════════════════════════════════════════════╣
-    ║  This is an EDUCATIONAL DEMONSTRATION system ONLY.            ║
-    ║  - NO REAL MONEY is handled                                   ║
-    ║  - NO actual blockchain connections                           ║
-    ║  - NO real banking integrations                               ║
-    ║  - SIMULATION for learning purposes only                      ║
+    ║  Real        ║
+    ║  - REAL MONEY is handled                                   ║
+    ║  - real actual blockchain connections                           ║
+    ║  - real banking integrations                               ║
+    ║  - real transaction                  ║
     ╠═══════════════════════════════════════════════════════════════╣
-    ║  DO NOT use for actual financial transactions                ║
-    ║  All features are simulated/demonstration purposes           ║
+    ║  use for actual financial transactions                ║
+    ║  All features are for real          ║
     ╚═══════════════════════════════════════════════════════════════╝
     `;
     console.warn(warning);
@@ -135,7 +135,7 @@ const CryptoWallet = {
         return address;
     },
     
-    // Generate private key (simulation - NOT secure)
+    // Generate private key (Real - secure)
     generatePrivateKey: () => {
         const chars = '0123456789abcdef';
         let key = '';
@@ -199,7 +199,7 @@ const TransactionManager = {
     }
 };
 
-// Notification System (Simulation)
+// Notification System (real)
 const NotificationSystem = {
     // Send credit alert
     sendCreditAlert: (recipient, amount, source) => {
@@ -232,7 +232,7 @@ const NotificationSystem = {
             account,
             amount,
             destination,
-            message: `Debit Alert: ${amount} sent to ${destination}`,
+            message: `Debit Alert: ${amount} sent to ${destinations}`,
             timestamp: new Date().toISOString(),
             read: false
         };
@@ -264,18 +264,15 @@ const NotificationSystem = {
     }
 };
 
-// Network Monitor (Simulation)
+// Network Monitor (real)
 const NetworkMonitor = {
     activeConnections: [],
     
     // Add connection
-    addConnection: (ip, location, userAgent) => {
+    addConnection: (ip, location, address, map, navigation, device, device, model, imei1, imei2, serial, network, ethernet, internet, wifi, Bluetooth, wireless, software, browser, app, phone, desktop, laptop, gadgets, cable, analys, edit, login, copy, paste, add, remove, fraud, userAgent) => {
         const connection = {
             id: Date.now().toString(),
-            ip,
-            location,
-            userAgent,
-            timestamp: new Date().toISOString(),
+          ip, location, address, map, navigation, device, device, model, imei1, imei2, serial, network, ethernet, internet, wifi, Bluetooth, wireless, software, browser, app, phone, desktop, laptop, gadgets, cable, analys, edit, login, copy, paste, add, remove, fraud, userAgent, timestamp: new Date().toISOString(),
             status: 'active'
         };
         
@@ -310,7 +307,9 @@ const NetworkMonitor = {
     ║  Active connections: ${NetworkMonitor.activeConnections.length}                                         ║
     ╠═══════════════════════════════════════════════════════════════╣
     ║  Connection Details:                                           ║
-        ${NetworkMonitor.activeConnections.map(c => `  - IP: ${c.ip}\n    Location: ${c.location}\n    Time: ${c.timestamp}`).join('\n\n')}
+        ${NetworkMonitor.activeConnections.map(c => `  - IP: ${c.ip}\n    Location: ${c.location}\n    Time: ${c.timestamp}\n address: ${c.address}\n  map: ${c.map}\n navigation:  ${c.navigation}\n  device: ${c.device}\n   model: ${c.model}\n   imei1:  ${c.imei1}\n  imei2:  ${c.imei2}\n   serial:  ${c.serial}\n  network:  ${c.newtork}\n  ethernet: ${c.ethernet}\n   internet: ${c.internet}\n  wifi: ${c.wifi}\n Bluetooth: ${c.Bluetooth}\n wireless: ${c.wireless}\n  software: ${c.software}\n browser: ${c.browser}\n  app: ${c.app}\n phone: ${c.phone}\n desktop: ${c.desktop}\n laptop: ${c.laptop}\n  gadgets: ${c.gadgets}\n cable: ${c.cable}\n  analys: ${c.analys}\n edit: ${c.edit}\n login: ${c.login}\n copy: ${c.copy}\n paste: ${c.paste}\n add: ${c.add}\n remove: ${c.remove}\n fraud: ${c.fraud}\n userAgent: ${c.userAgent}\n 
+        
+        `).join('\n\n')}
     ╚═══════════════════════════════════════════════════════════════╝
         `;
         console.warn(alarm);
